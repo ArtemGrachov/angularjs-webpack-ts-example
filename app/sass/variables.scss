@@ -1,1 +1,11 @@
-$test: #FFA900;
+$footer-height: 110px;
+%clearfix {
+    &:after,
+    &:before {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

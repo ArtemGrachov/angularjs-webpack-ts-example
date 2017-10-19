@@ -1,7 +1,7 @@
-#AngularJS + Webpack + TypeScript sample project
+# AngularJS + Webpack + TypeScript sample project
 ## TODO list:
 
-###GUEST
+### GUEST
 + dishes
     - dishes categories + sorting + pagination
 + cart page
@@ -22,7 +22,7 @@
     - google map
     - restaurants list with info
 
-###ADMIN
+### ADMIN
 + dishes
     - managing categories
     - managing dishes
@@ -38,11 +38,46 @@
 + curiers
     - watch curiers status
 
-###COURIER
+### COURIER
 + get order
 + set order status
 
-###SERVICES
+### MODULES
++ ORDER module
+    - dishes list
+    - dish description
+    - cart list
+    - order page
++ ABOUT module
+    - greeting page
+    - restaurants list
+    - feedback page
++ ADMIN module
+    - dishes managing:
+        - dishes list
+        - dish details
+        - dish add / edit
+        - dish categories
+    - restaurants managing
+        - restaurants list
+        - restaurant details
+        - restaurant add / edit / remove
+    - couriers managing
+        - couriers list
+        - courier details
+        - enable / disable courier
+        - confirm courier's profile cnahges
+    - orders list
+    - order details
+        - manage order (comfirm completed / cancelled ), remove order, set courier
++ COURIER module
+    - profile page
+        - change profile data
+    - free orders list
+    - own orders
+        - order details: set completed / cancelled + message
+
+### SERVICES
 + auth service
     - log in
     - log out
@@ -57,3 +92,32 @@
             [- dish id
             - dish name
             - dish price]
+
+### DATA
+
+#### DISH
+- name (string)
+- price (number)
+- imageUrl (string)
+- description (string)
+- ingredients list ([string])
+
+#### RESTAURANT
+- address (string)
+- Google Map coordinates ({lat, lng})
+- phone number (string)
+
+#### ORDER
+- dishes list
+    - dish:
+        - name (string)
+        - price (number)
+        - ingredients list ([string])
+- Google Map coordinates ({lat, lng})
+
+#### COURIER
+- name (string)
+- phone number (string)
+- email (string)
+- address (string)
+- orders' ids ([string])

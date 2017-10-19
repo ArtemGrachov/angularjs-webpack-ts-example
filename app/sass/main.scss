@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    @extend %clearfix;
+}
+
+.maincontent {
+    height: 100%;
+    padding-bottom: $footer-height;
+    @extend %clearfix;
+}
+
+.footer {
+    margin-top: -$footer-height;
+}
+
+@import './style.scss';
