@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/angular": "^1.6.34",
+    "@types/node": "^8.0.45",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-angularjs-annotate": "^0.8.2",

@@ -15,7 +15,7 @@ const PATHS = {
 
 module.exports = {
     context: PATHS.app,
-    entry: './app.module.js',
+    entry: './app.module.ts',
     output: {
         path: PATHS.dist,
         filename: 'bundle.js'
@@ -49,7 +49,7 @@ module.exports = {
                 }]
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(['css-loader', {
                     loader: 'sass-loader',
                     options: {
@@ -65,6 +65,9 @@ module.exports = {
                 loader: 'html-loader'
             }
         ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js', '.json']
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
