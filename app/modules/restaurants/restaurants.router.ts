@@ -14,5 +14,10 @@ export const RestaurantsRouter = function ($stateProvider: IStateProvider, $urlR
             url: '/restaurants-list',
             component: 'appRestaurantsList'
         })
+        .state('restaurants-details', {
+            url: '/:id',
+            component: 'appRestaurantsDetails',
+            parent: 'restaurants-list'
+        })
     $urlRouterProvider.otherwise('/main');
 }

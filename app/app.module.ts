@@ -6,6 +6,7 @@ import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
 import { MainModule } from './modules/main/main.module';
+import { AdminModule } from './modules/admin/admin.module';
 import { RestaurantsModule } from './modules/restaurants/restaurants.module';
 import { OrdersModule } from './modules/orders/orders.module';
 
