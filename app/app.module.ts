@@ -10,10 +10,13 @@ import { AdminModule } from './modules/admin/admin.module';
 import { RestaurantsModule } from './modules/restaurants/restaurants.module';
 import { OrdersModule } from './modules/orders/orders.module';
 
-angular.module('app', [
+import { DataService } from './services/data.service';
+
+export const app = angular.module('app', [
     uiRouter,
     MainModule.name,
     AdminModule.name,
     RestaurantsModule.name,
     OrdersModule.name
 ])
+    .service('dataService', DataService);

@@ -1,5 +1,7 @@
 class DishesCtrl {
-
+    constructor(private dataService: any) { // there should be interface!
+        this.dataService.testMethod();
+    }
 }
 
 export default {
