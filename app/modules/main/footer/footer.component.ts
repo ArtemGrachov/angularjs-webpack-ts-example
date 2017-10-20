@@ -1,3 +1,5 @@
+import './footer.component.scss';
+
 class FooterCtrl {
     constructor() {
     }

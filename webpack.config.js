@@ -47,6 +47,14 @@ module.exports = {
                         outputPath: './assets/'
                     }
                 }]
+            }, {
+                test: /\.jpg?$|\.png$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: './assets/images/'
+                    }
+                }]
             },
             {
                 test: /\.scss$/,

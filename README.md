@@ -48,7 +48,7 @@
     - dish description
     - cart list
     - order page
-+ ABOUT module
++ MAIN module
     - greeting page
     - restaurants list
     - feedback page

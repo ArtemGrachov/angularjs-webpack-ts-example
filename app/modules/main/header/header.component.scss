@@ -1,0 +1,57 @@
+.header-top {
+    background: url('./header-bg.jpg');
+    background-position: left bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-no-border-radius {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.cart {
+    &-link {
+        color: white;
+        position: relative;
+    }
+}
+
+.nav-number {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    line-height: 16px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background: red;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.logo {
+    text-align: center;
+    padding: 20px 20px;
+    display: inline-block;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background: rgba(black, .7);
+    &-title {
+        font-family: 'DeftoneStylus';
+        border-bottom: 4px solid white;
+        padding: 20px 80px;
+        font-size: 48px;
+        margin: 0 0 4px;
+    }
+    &-desc {
+        padding: 10px;
+        font-weight: bold;
+        border-top: 2px dashed white;
+    }
+}

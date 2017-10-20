@@ -1,3 +1,5 @@
+import './header.component.scss';
+
 class HeaderCtrl {
     constructor() { }
     $onInit() {

@@ -1,9 +1,79 @@
 <header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>AngularJS + Webpack + TypeScript sample app</h1>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="logo">
+                        <h1 class="logo-title">
+                            Sample App
+                        </h1>
+                        <div class="logo-desc">AngularJS + Webpack + TypeScript </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <nav class="navbar navbar-inverse navbar-no-border-radius">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a ui-sref="cart">
+                                <span class="glyphicon glyphicon-shopping-cart cart-link"></span>
+                                <div class="nav-number">0</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="greeting">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                                Main page
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="dishes">
+                                <span class="glyphicon glyphicon-apple"></span>
+                                Dishes
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="restaurants-list">
+                                <span class="glyphicon glyphicon-cutlery"></span>
+                                Restaurants
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="feedback">
+                                <span class="glyphicon glyphicon-comment"></span>
+                                Leave feedback
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="">
+                                <span class="glyphicon glyphicon-dashboard"></span>
+                                Admin panel
+                            </a>
+                            <div class="nav-number">0</div>
+                        </li>
+                        <li>
+
+                            <a href="">
+                                <span class="glyphicon glyphicon-briefcase"></span>
+                                Couriers page
+                            </a>
+                            <div class="nav-number">0</div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="glyphicon glyphicon-lock"></span>
+                                Authentcation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
