@@ -10,10 +10,10 @@ import AdminCouriersEditComponent from './couriers/edit/edit.component';
 import AdminDishesComponent from './dishes/dishes.component';
 import AdminDishesCategoriesComponent from './dishes/categories/categories.component';
 import AdminDishesDetailsComponent from './dishes/details/details.component';
-import AdminDishesEditComponent from './dishes/details/details.component';
+import AdminDishesEditComponent from './dishes/edit/edit.component';
 import AdminDishesListComponent from './dishes/list/list.component';
 // orders
-import AdminOrdersComponent from './orders/details/details.component';
+import AdminOrdersComponent from './orders/orders.component';
 import AdminOrdersDetailsComponent from './orders/details/details.component';
 import AdminOrdersListComponent from './orders/list/list.component';
 // restaurants
@@ -24,7 +24,11 @@ import AdminRestaurantsListComponent from './restaurants/list/list.component';
 // feedbacks
 import AdminFeedbacks from './feedbacks/feedbacks.component';
 
-import { AdminRouter } from './admin.router';
+import { AdminMainRouter } from './admin.router';
+import { AdminCouriersRouter } from './couriers/couriers.router';
+import { AdminDishesRouter } from './dishes/dishes.router';
+import { AdminOrdersRouter } from './orders/orders.router';
+import { AdminRestaurantsRouter } from './restaurants/restaurants.router';
 
 export const AdminModule = angular.module('adminModule', [])
     .component('appAdmin', AdminMainComponent)
@@ -42,7 +46,11 @@ export const AdminModule = angular.module('adminModule', [])
     .component('appAdminOrdersList', AdminOrdersListComponent)
     .component('appAdminRestaurants', AdminRestaurantsComponent)
     .component('appAdminRestaurantsDetails', AdminRestaurantsDetailsComponent)
-    .component('appAdminRestaurantEdit', AdminRestaurantEditComponent)
+    .component('appAdminRestaurantsEdit', AdminRestaurantEditComponent)
     .component('appAdminRestaurantsList', AdminRestaurantsListComponent)
     .component('appAdminFeedbacks', AdminFeedbacks)
-    .config(AdminRouter)
+    .config(AdminMainRouter)
+    .config(AdminCouriersRouter)
+    .config(AdminDishesRouter)
+    .config(AdminOrdersRouter)
+    .config(AdminRestaurantsRouter)

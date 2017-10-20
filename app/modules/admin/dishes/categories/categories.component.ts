@@ -5,5 +5,5 @@ class CategoriesCtrl {
 
 export default {
     controller: CategoriesCtrl,
-    template: <string>require('./edit.component.html')
+    template: <string>require('./categories.component.html')
 }

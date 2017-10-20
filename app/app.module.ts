@@ -13,6 +13,7 @@ import { OrdersModule } from './modules/orders/orders.module';
 angular.module('app', [
     uiRouter,
     MainModule.name,
+    AdminModule.name,
     RestaurantsModule.name,
     OrdersModule.name
 ])

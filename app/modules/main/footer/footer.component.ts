@@ -3,12 +3,6 @@ import './footer.component.scss';
 class FooterCtrl {
     constructor() {
     }
-    $onInit() {
-        console.log('footer $onInit')
-    }
-    $onDestroy() {
-        console.log('footer $onDestroy')
-    }
 }
 
 export default {
