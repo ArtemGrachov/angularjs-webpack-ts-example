@@ -1,11 +1,10 @@
 import './footer.component.scss';
 
-class FooterCtrl {
-    constructor() {
-    }
+class controller {
+
 }
 
-export default {
-    controller: FooterCtrl,
+export const FooterComponent = {
+    controller: controller,
     template: <string>require('./footer.component.html')
 }

@@ -1,0 +1,13 @@
+{
+    "test": [{
+            "id": "324235235",
+            "val": 1,
+            "text": "Lorem ipsum"
+        },
+        {
+            "id": "2",
+            "val": 2,
+            "text": "Dolor sit amet"
+        }
+    ]
+}

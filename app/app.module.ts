@@ -6,17 +6,13 @@ import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
 import { MainModule } from './modules/main/main.module';
-import { AdminModule } from './modules/admin/admin.module';
-import { RestaurantsModule } from './modules/restaurants/restaurants.module';
-import { OrdersModule } from './modules/orders/orders.module';
 
 import { DataService } from './services/data.service';
+import { DishesService } from './services/dishes.service';
 
 export const app = angular.module('app', [
     uiRouter,
     MainModule.name,
-    AdminModule.name,
-    RestaurantsModule.name,
-    OrdersModule.name
 ])
-    .service('dataService', DataService);
+    .service(DataService.serviceName, DataService)
+    .service(DishesService.serviceName, DishesService)

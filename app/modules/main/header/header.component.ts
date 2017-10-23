@@ -1,10 +1,10 @@
 import './header.component.scss';
 
-class HeaderCtrl {
+class controller {
     constructor() { }
 }
 
-export default {
-    controller: HeaderCtrl,
+export const HeaderComponent = {
+    controller: controller,
     template: <string>require('./header.component.html')
 }
