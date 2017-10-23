@@ -12,7 +12,7 @@ import { DishesService } from './services/dishes.service';
 
 export const app = angular.module('app', [
     uiRouter,
-    MainModule.name,
+    MainModule.name
 ])
     .service(DataService.serviceName, DataService)
     .service(DishesService.serviceName, DishesService)

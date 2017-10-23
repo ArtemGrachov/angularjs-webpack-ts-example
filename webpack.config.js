@@ -34,8 +34,9 @@ module.exports = {
                         plugins: [
                             'angularjs-annotate'
                         ]
-                    }
-                }]
+                    },
+                }],
+                exclude: /node_modules/
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract(['css-loader'])

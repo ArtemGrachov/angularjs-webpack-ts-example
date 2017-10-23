@@ -5,15 +5,8 @@ class controller {
     constructor(
         private dishesService: IDishesService
     ) { }
-
-    public $onInit(): void {
-        this.dishesService.getDish('0')
-            .then(res =>
-                console.log(res)
-            )
-        this.dishesService.test().then(
-            (res: any) => console.log(res)
-        );
+    public $onInit() {
+        this.dishesService.test();
     }
 }
 

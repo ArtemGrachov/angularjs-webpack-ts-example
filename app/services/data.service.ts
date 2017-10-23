@@ -1,24 +1,27 @@
 import { IHttpPromise, IHttpService, IPromise } from 'angular';
+import * as firebase from 'firebase';
 
 export interface IDataService {
-    get(url: string, auth: boolean): IHttpPromise<any>,
-    delete(url: string, auth: boolean): Promise<any>,
-    post(url: string, data: any, auth: boolean): Promise<any>
-    put(url: string, data: any, auth: boolean): Promise<any>
+    test(): void
 }
 
 export class DataService {
     public static readonly serviceName: string = 'DataService';
     public static readonly $inject: string[] = ['$http'];
 
-    constructor(private $http: IHttpService) { }
-
-    get(url: string, auth: boolean): IPromise<any> {
-        return this.$http({
-            method: 'GET',
-            url: url
+    constructor(private $http: IHttpService) {
+        const fb: any = firebase;
+        fb.initializeApp({
+            apiKey: "AIzaSyBejaVDaYDTmIEkdYHWQfnd0cexSWu432A",
+            authDomain: "angular-restaurant.firebaseapp.com",
+            databaseURL: "https://angular-restaurant.firebaseio.com",
+            projectId: "angular-restaurant",
+            storageBucket: "angular-restaurant.appspot.com",
+            messagingSenderId: "89575301309"
         })
-            .then(res => res.data)
     }
 
+    test(fb: any = firebase) {
+        fb.database().ref().push({ test: '12345' })
+    }
 }
