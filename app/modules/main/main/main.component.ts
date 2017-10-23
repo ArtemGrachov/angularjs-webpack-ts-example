@@ -6,7 +6,19 @@ class controller {
         private dishesService: IDishesService
     ) { }
     public $onInit() {
-        this.dishesService.test();
+        const dishes = this.dishesService.getDishes(1);
+        dishes.on('value', function (res: any) {
+            console.log(res.val())
+        })
+        const time = new Date();
+        this.dishesService.addDish({
+            name: `Dish #${time.getMinutes()}:${time.getSeconds()}`,
+            price: 5000,
+            imageUrl: '',
+            description: 'ddd zzz fff',
+            ingredients: ['111', '222', '333'],
+            date: new Date().getTime()
+        })
     }
 }
 

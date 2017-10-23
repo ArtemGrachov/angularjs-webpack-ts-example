@@ -1,17 +1,20 @@
 import { IHttpPromise, IHttpService, IPromise } from 'angular';
+
 import * as firebase from 'firebase';
 
 export interface IDataService {
-    test(): void
+    get(url: string, auth: boolean): any,
+    post(url: string, data: any, auth: boolean): Promise<any>,
+    update(url: string, data: any, auth: boolean): Promise<any>,
+    remove(url: string, auth: boolean): Promise<any>
 }
 
-export class DataService {
+export class DataService implements IDataService {
     public static readonly serviceName: string = 'DataService';
     public static readonly $inject: string[] = ['$http'];
 
-    constructor(private $http: IHttpService) {
-        const fb: any = firebase;
-        fb.initializeApp({
+    constructor(private $http: IHttpService, private fire: any = firebase) {
+        this.fire.initializeApp({
             apiKey: "AIzaSyBejaVDaYDTmIEkdYHWQfnd0cexSWu432A",
             authDomain: "angular-restaurant.firebaseapp.com",
             databaseURL: "https://angular-restaurant.firebaseio.com",
@@ -21,7 +24,19 @@ export class DataService {
         })
     }
 
-    test(fb: any = firebase) {
-        fb.database().ref().push({ test: '12345' })
+    get(url: string, auth: boolean) {
+        return this.fire.database().ref(url);
+    }
+
+    post(url: string, data: any, auth: boolean): Promise<any> {
+        return this.fire.database().ref(url).push(data)
+    }
+
+    update(url: string, data: any, auth: boolean): Promise<any> {
+        return this.fire.database().ref(url).update(data)
+    }
+
+    remove(url: string, auth: boolean): Promise<any> {
+        return this.fire.database().ref(url).remove();
     }
 }
