@@ -1,6 +1,8 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="title">{{$ctrl.dish.name}} </div>
+        <div class="title">{{$ctrl.dish.name}}
+            <app-dish-cart-counter in-cart="$ctrl.countInCart"></app-dish-cart-counter>
+        </div>
         <img ng-src="{{$ctrl.dish.imageUrl}}" class="img-rounded img-responsive dish-img" alt="{{$ctrl.dish.name}}">
     </div>
 </div>

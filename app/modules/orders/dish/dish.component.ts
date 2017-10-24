@@ -1,16 +1,18 @@
 import { IComponentOptions, IScope } from 'angular';
 import { Dish } from '../../../models/dish.model';
 import { DishesService } from '../../../services/dishes.service';
+import { CartService } from '../../../services/cart.service';
 import { StateParams } from '@uirouter/angularjs';
 
 import './dish.component.scss';
 
 class controller {
-    constructor(private dishesService: DishesService, private $stateParams: StateParams, private $scope: IScope) { }
+    constructor(private dishesService: DishesService, private cartService: CartService, private $stateParams: StateParams, private $scope: IScope) { }
 
-    public static readonly $inject: string[] = [DishesService.serviceName, '$stateParams', '$scope'];
+    public static readonly $inject: string[] = [DishesService.serviceName, CartService.serviceName, '$stateParams', '$scope'];
     public dish: Dish;
     public dishObs: any;
+    public countInCart: number = 0;
 
     public $onInit() {
         this.dishObs = this
@@ -21,7 +23,7 @@ class controller {
                 this.dish = res.val();
                 this.$scope.$apply();
             })
-
+        this.countInCart = this.cartService.countInCart(this.$stateParams.id);
     }
     public $onDestroy() {
         this.dishObs.off();

@@ -10,4 +10,8 @@ export const OrdersRouter = function ($stateProvider: IStateProvider, $urlRouter
             url: '/dishes/:id',
             component: 'appDish'
         })
+        .state('order', {
+            url: '/order',
+            component: 'appOrder'
+        })
 }

@@ -2,20 +2,18 @@ import { IComponentOptions } from 'angular';
 import { Dish } from '../../../../models/dish.model';
 import './dish-preview.component.scss';
 
-interface IBindings {
-    [key: string]: any;
-    dish: any;
-    id: string
-}
-
-const bindings: IBindings = {
+const bindings = {
     dish: '=',
-    id: '='
+    id: '=',
+    addToCart: '&',
+    removeFromCart: '&',
+    inCart: '='
 }
 
-class controller implements IBindings {
+class controller {
     public dish: Dish;
     public id: string;
+    public inCart: number;
 }
 
 export const DishPreviewComponent: IComponentOptions = {

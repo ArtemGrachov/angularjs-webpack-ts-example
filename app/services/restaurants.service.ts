@@ -11,8 +11,8 @@ export class RestaurantsService {
         return this.dataService.post('/restaurants/', restaurant, true);
     }
 
-    updateRestaurant(restaurant: Restaurant): Promise<any> {
-        return this.dataService.update('/restaurants/', restaurant, true);
+    updateRestaurant(data: any): Promise<any> {
+        return this.dataService.update('/restaurants/', data, true);
     }
 
     deleteRestaurant(id: string): Promise<any> {

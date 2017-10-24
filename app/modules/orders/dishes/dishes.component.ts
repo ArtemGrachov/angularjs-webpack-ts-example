@@ -2,15 +2,19 @@ import { IComponentOptions, IScope } from 'angular';
 import { Dish } from '../../../models/dish.model';
 
 import { DishesService } from '../../../services/dishes.service';
+import { CartService } from '../../../services/cart.service';
 
 class controller {
     constructor(
         private dishesService: DishesService,
+        private cartService: CartService,
         private $scope: IScope
     ) { }
 
-    public static readonly $inject: string[] = [DishesService.serviceName, '$scope'];
+    public static readonly $inject: string[] = [DishesService.serviceName, CartService.serviceName, '$scope'];
     public dishes: Dish[] = [];
+    public cart: string[] = this.cartService.getCart();
+    public countInCart: any = this.cartService.countInCart;
     private dishesObs: any;
 
     public $onInit() {
@@ -23,6 +27,14 @@ class controller {
 
     public $onDestroy() {
         this.dishesObs.off();
+    }
+
+    public addToCart(id: string) {
+        this.cartService.addToCart(id);
+    }
+
+    public removeFromCart(id: string) {
+        this.cartService.removeFromCart(id);
     }
 }
 

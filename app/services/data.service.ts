@@ -21,7 +21,7 @@ export class DataService implements IDataService {
             projectId: "angular-restaurant",
             storageBucket: "angular-restaurant.appspot.com",
             messagingSenderId: "89575301309"
-        })
+        });
     }
 
     get(url: string, auth: boolean) {
