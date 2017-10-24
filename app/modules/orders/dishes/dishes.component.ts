@@ -13,8 +13,6 @@ class controller {
 
     public static readonly $inject: string[] = [DishesService.serviceName, CartService.serviceName, '$scope'];
     public dishes: Dish[] = [];
-    public cart: string[] = this.cartService.getCart();
-    public countInCart: any = this.cartService.countInCart;
     private dishesObs: any;
 
     public $onInit() {

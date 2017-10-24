@@ -6,6 +6,14 @@
                 <div class="title title-sm">
                     ${{$ctrl.dish.price}}
                 </div>
+                <button class="btn btn-default btn-block" ng-click="$ctrl.addToCart()">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    Add to cart
+                </button>
+                <button class="btn btn-default btn-block" ng-click="$ctrl.removeFromCart()">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Remove from cart
+                </button>
                 <button class="btn btn-default btn-block" ui-sref="dish({id:$ctrl.id})">
                     <span class="glyphicon glyphicon-info-sign"></span>
                     Details...
