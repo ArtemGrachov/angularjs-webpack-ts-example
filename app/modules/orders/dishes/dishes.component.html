@@ -1,3 +1,3 @@
 <app-dish-preview ng-repeat="(id, dish) in $ctrl.dishes track by $index" dish="dish" id="id" add-to-cart="$ctrl.addToCart(id)"
-    remove-from-cart="$ctrl.removeFromCart($index)" in-cart="$ctrl.cartService.countInCart(id)">
+    remove-from-cart="$ctrl.removeFromCart(id)" in-cart="$ctrl.cartService.countInCart(id)">
 </app-dish-preview>

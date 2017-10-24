@@ -12,14 +12,15 @@ export class CartService {
     addToCart(dishId: string): void {
         this.cart.push(dishId);
         localStorage.setItem('cart', JSON.stringify(this.cart));
-        console.log(this.cart)
     }
 
-    removeFromCart(id: string): string {
-        const removedId = this.cart.splice(
-            this.cart.indexOf(id), 1);
-        localStorage.setItem('cart', JSON.stringify(this.cart));
-        return removedId[0];
+    removeFromCart(id: string): void {
+        const index = this.cart.indexOf(id);
+        if (index > -1) {
+            const removedId = this.cart.splice(
+                this.cart.indexOf(id), 1);
+            localStorage.setItem('cart', JSON.stringify(this.cart));
+        }
     }
 
     clearCart() {
