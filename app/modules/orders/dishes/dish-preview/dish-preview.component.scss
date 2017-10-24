@@ -1,0 +1,21 @@
+.dish-preview {
+    &-list {
+        margin: 0 0 10px;
+        padding: 0;
+        list-style: none;
+    }
+    &-item {
+        padding: 5px 0;
+        color: grey;
+        &:before {
+            content: '\e013';
+            padding: 4px;
+            font-family: 'Glyphicons Halflings'
+        }
+    }
+    &-img {
+        padding: 2px;
+        border: 1px dashed lightgrey;
+        margin: 0 0 5px;
+    }
+}

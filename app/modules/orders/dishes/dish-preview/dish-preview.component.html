@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <img ng-src="{{$ctrl.dish.imageUrl}}" class="img-rounded img-responsive dish-preview-img" alt="{{$ctrl.dish.name}}">
+                <button class="btn btn-default btn-block">
+                    <span class="pull-left">
+                        <strong>Price:</strong> ${{$ctrl.dish.price}}
+                    </span>
+                    <span class="pull-right">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        Add to cart
+                    </span>
+                </button>
+                <button class="btn btn-default btn-block" ui-sref="dish({id:$ctrl.id})">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                    Details...
+                </button>
+            </div>
+            <div class="col-sm-9">
+                <div class="title">
+                    {{$ctrl.dish.name}}
+                </div>
+                <ul class="dish-preview-list">
+                    <li class="dish-preview-item" ng-repeat="ingredient in $ctrl.dish.ingredients">
+                        {{ingredient}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
