@@ -21,7 +21,9 @@
                         <li>
                             <a ui-sref="order">
                                 <span class="glyphicon glyphicon-shopping-cart cart-link"></span>
-                                <div class="nav-number">0</div>
+                                <div class="nav-number">
+                                    {{$ctrl.cartService.getCart().length}}
+                                </div>
                             </a>
                         </li>
                         <li>
@@ -45,7 +47,7 @@
                         <li>
                             <a ui-sref="feedback">
                                 <span class="glyphicon glyphicon-comment"></span>
-                                Leave feedback
+                                Contact us
                             </a>
                         </li>
                     </ul>
