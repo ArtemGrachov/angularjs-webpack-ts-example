@@ -1,12 +1,12 @@
 import { IComponentOptions, IScope } from 'angular';
 import { Dish } from '../../../models/dish.model';
-import { IDishesService, DishesService } from '../../../services/dishes.service';
+import { DishesService } from '../../../services/dishes.service';
 import { StateParams } from '@uirouter/angularjs';
 
 import './dish.component.scss';
 
 class controller {
-    constructor(private dishesService: IDishesService, private $stateParams: StateParams, private $scope: IScope) { }
+    constructor(private dishesService: DishesService, private $stateParams: StateParams, private $scope: IScope) { }
 
     public static readonly $inject: string[] = [DishesService.serviceName, '$stateParams', '$scope'];
     public dish: Dish;

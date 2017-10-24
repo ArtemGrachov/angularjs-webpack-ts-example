@@ -1,11 +1,11 @@
 import { IComponentOptions, IScope } from 'angular';
 import { Dish } from '../../../models/dish.model';
 
-import { IDishesService, DishesService } from '../../../services/dishes.service';
+import { DishesService } from '../../../services/dishes.service';
 
 class controller {
     constructor(
-        private dishesService: IDishesService,
+        private dishesService: DishesService,
         private $scope: IScope
     ) { }
 

@@ -2,16 +2,10 @@
     &-list {
         margin: 0 0 10px;
         padding: 0;
-        list-style: none;
     }
     &-item {
-        padding: 5px 0;
+        padding: 5px;
         color: grey;
-        &:before {
-            content: '\e013';
-            padding: 4px;
-            font-family: 'Glyphicons Halflings'
-        }
     }
     &-img {
         padding: 2px;

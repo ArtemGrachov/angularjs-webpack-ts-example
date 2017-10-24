@@ -1,1 +1,11 @@
-<h4>restaurant details</h4>
+<div class="title">
+    {{$ctrl.restaurant.address}}
+</div>
+<div uib-carousel active="active" interval="3500">
+    <div uib-slide ng-repeat="url in $ctrl.restaurant.imagesUrls track by $index" index="$index">
+        <div class="restaurant-slider-slide" ng-style="{'background-image':'url({{url}})'}">
+        </div>
+    </div>
+</div>
+<div class="title title-sm">Phone number</div>
+{{$ctrl.restaurant.phone}}

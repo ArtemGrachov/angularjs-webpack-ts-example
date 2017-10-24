@@ -1,8 +1,5 @@
 <div class="row">
     <div class="col-sm-7">
-        <h2>Google Map will be here!</h2>
-    </div>
-    <div class="col-sm-5">
         <div class="btn-group" uib-dropdown>
             <button class="btn btn-default" uib-dropdown-toggle>
                 <span class="glyphicon glyphicon-cutlery"></span>
@@ -10,11 +7,14 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" uib-dropdown-menu>
-                <li>
-                    <a ui-sref="restaurant-details({id: 0})">afwqfwfefwefe</a>
+                <li ng-repeat="(id, restaurant) in $ctrl.restaurants">
+                    <a ui-sref="restaurant-details({id: id})">{{restaurant.address}}</a>
                 </li>
             </ul>
         </div>
+        <h2>Google Map will be here!</h2>
+    </div>
+    <div class="col-sm-5">
         <ui-view></ui-view>
     </div>
 </div>
