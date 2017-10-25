@@ -6,6 +6,7 @@ export class AuthService {
         this.auth
             .onAuthStateChanged((user: any) => {
                 if (user) {
+                    this.userId = user.uid;
                     this.fire
                         .database()
                         .ref('users/' + user.uid)
@@ -23,6 +24,7 @@ export class AuthService {
     public static readonly serviceName: string = 'AuthService';
     private auth: any = this.fire.auth();
     public user: any;
+    public userId: string;
 
     login(userForm: any) {
         console.log('auth service user form', userForm)
@@ -63,7 +65,7 @@ export class AuthService {
     updateUserData(userId: string, userData: any): void {
         this.fire
             .database()
-            .ref('users')
+            .ref('users/' + userId)
             .update(userData)
     }
 
@@ -75,7 +77,6 @@ export class AuthService {
                 console.log('userdata subscribe');
                 console.log('userdata', res.val())
                 this.user = res.val();
-                this.$rootScope.$apply();
             })
     }
 }
