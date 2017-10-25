@@ -17,6 +17,7 @@ import { RestaurantsService } from './services/restaurants.service';
 import { OrdersService } from './services/orders.service';
 import { CartService } from './services/cart.service';
 import { FeedbackService } from './services/feedback.service';
+import { AuthService } from './services/auth.service';
 
 export const app = angular.module('app', [
     uiRouter,
@@ -32,3 +33,4 @@ export const app = angular.module('app', [
     .service(OrdersService.serviceName, OrdersService)
     .service(CartService.serviceName, CartService)
     .service(FeedbackService.serviceName, FeedbackService)
+    .service(AuthService.serviceName, AuthService)
