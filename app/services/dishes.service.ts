@@ -1,7 +1,6 @@
 import { Dish } from '../models/dish.model';
 import { DataService } from './data.service';
 import { CartService } from './cart.service';
-import { IPromise } from 'angular';
 
 export class DishesService {
     public static readonly serviceName: string = 'DishesService';
