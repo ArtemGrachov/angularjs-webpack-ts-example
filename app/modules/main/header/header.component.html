@@ -52,31 +52,36 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
+                        <li ng-if="$ctrl.authService.user">
                             <a ui-sref="profile">
                                 <span class="glyphicon glyphicon-user"></span>
                                 Profile
                             </a>
                         </li>
-                        <li>
+                        <li ng-if="$ctrl.authService.user.role === 'admin'">
                             <a ui-sref="admin">
                                 <span class="glyphicon glyphicon-dashboard"></span>
                                 Admin panel
                             </a>
                             <div class="nav-number">0</div>
                         </li>
-                        <li>
-
+                        <li ng-if="$ctrl.authService.user.role === 'courier'">
                             <a href="">
                                 <span class="glyphicon glyphicon-briefcase"></span>
                                 Couriers page
                             </a>
                             <div class="nav-number">0</div>
                         </li>
-                        <li>
+                        <li ng-if="!$ctrl.authService.user">
                             <a ui-sref="auth">
                                 <span class="glyphicon glyphicon-lock"></span>
                                 Authentcation
+                            </a>
+                        </li>
+                        <li ng-if="$ctrl.authService.user">
+                            <a ng-click="$ctrl.authService.logout()" class="pointer">
+                                <span class="glyphicon glyphicon-log-out"></span>
+                                Logout
                             </a>
                         </li>
                     </ul>

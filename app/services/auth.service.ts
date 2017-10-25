@@ -12,6 +12,8 @@ export class AuthService {
                         .on('value', () => this.getUserData(user.uid))
                     console.log('auth state changed: login');
                 } else {
+                    this.user = null;
+                    this.$rootScope.$apply();
                     console.log('auth state changed: logout')
                 }
             })
@@ -24,7 +26,7 @@ export class AuthService {
 
     login(userForm: any) {
         console.log('auth service user form', userForm)
-        this.auth
+        return this.auth
             .signInWithEmailAndPassword(userForm.email, userForm.password)
             .then((res: any) => {
                 console.log(res)
@@ -35,7 +37,7 @@ export class AuthService {
     }
 
     logout() {
-        console.log('auth service logout')
+        this.auth.signOut();
     }
 
     reg(regForm: any) {
@@ -45,6 +47,7 @@ export class AuthService {
             .then((res: any) => {
                 delete regForm.password;
                 delete regForm.email;
+                regForm.role = 'user';
                 this.createUserData(res.uid, regForm);
             })
             .catch((err: any) => console.log(err))

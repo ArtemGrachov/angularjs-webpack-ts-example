@@ -6,6 +6,10 @@
     &-sm {
         font-size: 20px;
     }
+    &:first-letter {
+        color: green;
+        font-weight: bold;
+    }
 }
 
 .block {
@@ -13,4 +17,8 @@
     margin: 10px 0 20px;
     padding: 10px;
     border: 1px dashed lightgrey;
+}
+
+.pointer {
+    cursor: pointer;
 }
