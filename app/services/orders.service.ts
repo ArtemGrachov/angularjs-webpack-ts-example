@@ -11,7 +11,7 @@ export class OrdersService {
     sendOrder(order: Order): Promise<any> {
         order.date = new Date().getTime();
         return this.dataSerivce
-            .post('orders', order, false)
+            .post('orders', order)
             .then((res: any) => {
                 this.cartService.clearCart();
                 this.$rootScope.$apply();
@@ -21,21 +21,21 @@ export class OrdersService {
 
     updateOrder(id: string, data: any): Promise<any> {
         return this.dataSerivce
-            .update('orders/' + id, data, true)
+            .update('orders/' + id, data)
     }
 
     getOrders(): any {
         return this.dataSerivce
-            .get('orders', true)
+            .get('orders')
     }
 
     getOrder(id: string): any {
         return this.dataSerivce
-            .get('orders/' + id, true)
+            .get('orders/' + id)
     }
 
     removeOrder(id: string): Promise<any> {
         return this.dataSerivce
-            .remove('orders/' + id, true)
+            .remove('orders/' + id)
     }
 }

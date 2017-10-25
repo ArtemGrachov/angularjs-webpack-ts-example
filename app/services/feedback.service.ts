@@ -8,14 +8,14 @@ export class FeedbackService {
     static readonly serviceName: string = 'FeedbackService';
 
     sendFeedback(feedback: Feedback): Promise<any> {
-        return this.dataService.post('feedbacks', feedback, false);
+        return this.dataService.post('feedbacks', feedback);
     }
 
     getFeedbacks(): Promise<any> {
-        return this.dataService.get('feedbacks', false)
+        return this.dataService.get('feedbacks')
     }
 
     deleteFeedback(id: string): Promise<any> {
-        return this.dataService.remove('feedbacks/' + id, true);
+        return this.dataService.remove('feedbacks/' + id);
     }
 }

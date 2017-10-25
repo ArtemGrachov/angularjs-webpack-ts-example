@@ -5,6 +5,7 @@ import './sass/main.scss';
 import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import 'angular-ui-bootstrap'
+import * as firebase from 'firebase';
 
 import { MainModule } from './modules/main/main.module';
 import { OrdersModule } from './modules/orders/orders.module';
@@ -27,6 +28,16 @@ export const app = angular.module('app', [
     OrdersModule.name,
     AuthModule.name
 ])
+    .config(function (fire: any = firebase) {
+        fire.initializeApp({
+            apiKey: "AIzaSyBejaVDaYDTmIEkdYHWQfnd0cexSWu432A",
+            authDomain: "angular-restaurant.firebaseapp.com",
+            databaseURL: "https://angular-restaurant.firebaseio.com",
+            projectId: "angular-restaurant",
+            storageBucket: "angular-restaurant.appspot.com",
+            messagingSenderId: "89575301309"
+        }, '[DEFAULT]');
+    })
     .service(DataService.serviceName, DataService)
     .service(DishesService.serviceName, DishesService)
     .service(RestaurantsService.serviceName, RestaurantsService)

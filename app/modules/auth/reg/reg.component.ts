@@ -7,6 +7,10 @@ class Controller {
     public regForm: any;
 
     reg() {
+        this.regForm.location = {
+            lat: 0,
+            lng: 0
+        }
         this.authService.reg(this.regForm);
     }
 }

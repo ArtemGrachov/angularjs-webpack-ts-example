@@ -9,22 +9,22 @@ export class DishesService {
     }
 
     addDish(dish: Dish): Promise<any> {
-        return this.dataService.post('/dishes/', dish, true);
+        return this.dataService.post('/dishes/', dish);
     }
 
     updateDish(data: any): Promise<any> {
-        return this.dataService.update('/dishes/', data, true);
+        return this.dataService.update('/dishes/', data);
     }
 
     deleteDish(id: string): Promise<any> {
-        return this.dataService.remove('/dishes/' + id, true);
+        return this.dataService.remove('/dishes/' + id);
     }
 
     getDish(id: string): any {
-        return this.dataService.get('/dishes/' + id, false);
+        return this.dataService.get('/dishes/' + id);
     }
 
     getDishes(): any {
-        return this.dataService.get('/dishes/', false)
+        return this.dataService.get('/dishes/')
     }
 }
