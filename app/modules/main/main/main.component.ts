@@ -1,8 +1,8 @@
 import { IComponentOptions } from 'angular';
-class controller {
+class Controller {
 }
 
 export const MainComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: <string>require('./main.component.html')
 }

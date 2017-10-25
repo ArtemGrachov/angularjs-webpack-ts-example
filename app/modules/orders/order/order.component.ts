@@ -4,7 +4,7 @@ import { CartService } from '../../../services/cart.service';
 
 import { Order } from '../../../models/order.model';
 
-class controller {
+class Controller {
     constructor(
         private ordersService: OrdersService,
         private cartService: CartService) { }
@@ -22,6 +22,6 @@ class controller {
 }
 
 export const OrderComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./order.component.html')
 }

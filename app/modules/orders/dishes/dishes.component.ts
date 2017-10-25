@@ -4,7 +4,7 @@ import { Dish } from '../../../models/dish.model';
 import { DishesService } from '../../../services/dishes.service';
 import { CartService } from '../../../services/cart.service';
 
-class controller {
+class Controller {
     constructor(
         private dishesService: DishesService,
         private cartService: CartService,
@@ -37,6 +37,6 @@ class controller {
 }
 
 export const DishesComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./dishes.component.html')
 }

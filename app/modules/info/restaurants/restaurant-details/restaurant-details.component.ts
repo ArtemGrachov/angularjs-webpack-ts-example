@@ -6,7 +6,7 @@ import './restaurant-details.component.scss';
 
 import { Restaurant } from '../../../../models/restaurant.model';
 
-class controller {
+class Controller {
     constructor(private restaurantsService: RestaurantsService, private $stateParams: StateParams, private $scope: IScope) { }
     static readonly $inject: string[] = [RestaurantsService.serviceName, '$stateParams', '$scope'];
     private restaurantObs: any;
@@ -26,6 +26,6 @@ class controller {
 }
 
 export const RestaurantDetailsComponent = {
-    controller: controller,
+    controller: Controller,
     template: require('./restaurant-details.component.html')
 }

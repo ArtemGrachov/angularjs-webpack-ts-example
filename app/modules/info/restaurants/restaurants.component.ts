@@ -2,7 +2,7 @@ import { IComponentOptions, IScope } from 'angular';
 import { Restaurant } from '../../../models/restaurant.model';
 import { RestaurantsService } from '../../../services/restaurants.service';
 
-class controller {
+class Controller {
     constructor(private restaurantsService: RestaurantsService, private $scope: IScope) { }
     static readonly $inject: string[] = [RestaurantsService.name, '$scope'];
     private restaurantsObs: any;
@@ -20,6 +20,6 @@ class controller {
 }
 
 export const RestaurantsComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./restaurants.component.html')
 }

@@ -6,7 +6,7 @@ import { StateParams } from '@uirouter/angularjs';
 
 import './dish.component.scss';
 
-class controller {
+class Controller {
     constructor(private dishesService: DishesService, private cartService: CartService, private $stateParams: StateParams, private $scope: IScope) { }
 
     public static readonly $inject: string[] = [DishesService.serviceName, CartService.serviceName, '$stateParams', '$scope'];
@@ -36,6 +36,6 @@ class controller {
 }
 
 export const DishComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./dish.component.html')
 }

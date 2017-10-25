@@ -2,7 +2,7 @@ import { IComponentOptions } from 'angular';
 import { FeedbackService } from '../../../services/feedback.service';
 import { Feedback } from '../../../models/feedback.model';
 
-class controller {
+class Controller {
     constructor(private feedbackService: FeedbackService) { }
     static readonly $inject: string[] = [FeedbackService.serviceName];
     public feedbackForm: Feedback;
@@ -14,6 +14,6 @@ class controller {
 }
 
 export const FeedbackComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./feedback.component.html')
 }

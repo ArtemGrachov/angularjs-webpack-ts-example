@@ -9,6 +9,7 @@ import 'angular-ui-bootstrap'
 import { MainModule } from './modules/main/main.module';
 import { OrdersModule } from './modules/orders/orders.module';
 import { InfoModule } from './modules/info/info.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 import { DataService } from './services/data.service';
 import { DishesService } from './services/dishes.service';
@@ -22,7 +23,8 @@ export const app = angular.module('app', [
     MainModule.name,
     InfoModule.name,
     'ui.bootstrap',
-    OrdersModule.name
+    OrdersModule.name,
+    AuthModule.name
 ])
     .service(DataService.serviceName, DataService)
     .service(DishesService.serviceName, DishesService)

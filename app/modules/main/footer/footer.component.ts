@@ -1,11 +1,11 @@
 import { IComponentOptions } from 'angular';
 import './footer.component.scss';
 
-class controller {
+class Controller {
 
 }
 
 export const FooterComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: <string>require('./footer.component.html')
 }

@@ -15,4 +15,8 @@ export const InfoRouter = function ($stateProvider: IStateProvider, $urlRouterPr
             url: '/feedback',
             component: 'appFeedback'
         })
+        .state('greeting', {
+            url: '/greeting',
+            component: 'appGreeting'
+        })
 }

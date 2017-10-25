@@ -1,0 +1,22 @@
+<div uib-carousel active="active" interval="3500">
+    <div uib-slide ng-repeat="(id, dish) in $ctrl.dishes track by $index" index="$index">
+        <div class="restaurant-slider-slide" ng-style="{'background-image':'url({{dish.imageUrl}})'}" ui-sref="dish({id:dish.id})">
+            <div class="carousel-caption">
+                <h4>{{dish.name}}</h4>
+                <p>Only for ${{dish.price}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>Voluptate non aliquip et cupidatat eu qui velit adipisicing. Proident aliqua pariatur velit cupidatat anim esse voluptate
+            est sit. Ea et dolore velit nisi enim sint dolore velit. Ut labore minim id proident.</p>
+        <p>Quis voluptate dolor pariatur dolor pariatur. Eu amet nulla qui culpa in amet incididunt ex do do nostrud pariatur
+            anim ut. Aute deserunt Lorem magna adipisicing aliqua sint commodo fugiat commodo velit sit reprehenderit. Enim
+            magna excepteur eu aute anim nisi nisi do mollit. Esse ex consequat aliquip voluptate dolor proident aliquip.</p>
+        <p>
+            Ex ad enim ipsum labore culpa. Nulla quis nisi eiusmod nostrud laboris. Qui commodo culpa cillum minim dolor sit.
+        </p>
+    </div>
+</div>

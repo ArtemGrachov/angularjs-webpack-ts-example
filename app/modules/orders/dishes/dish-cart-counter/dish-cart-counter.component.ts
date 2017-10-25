@@ -4,12 +4,12 @@ const bindings = {
     inCart: '='
 }
 
-class controller {
+class Controller {
     public inCart: number
 }
 
 export const DishCartCounterComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./dish-cart-counter.component.html'),
     bindings: bindings
 }

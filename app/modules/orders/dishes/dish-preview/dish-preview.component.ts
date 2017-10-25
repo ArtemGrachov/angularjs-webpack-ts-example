@@ -10,14 +10,14 @@ const bindings = {
     inCart: '='
 }
 
-class controller {
+class Controller {
     public dish: Dish;
     public id: string;
     public inCart: number;
 }
 
 export const DishPreviewComponent: IComponentOptions = {
-    controller: controller,
+    controller: Controller,
     template: require('./dish-preview.component.html'),
     bindings: bindings
 }
