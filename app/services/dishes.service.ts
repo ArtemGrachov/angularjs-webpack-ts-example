@@ -3,8 +3,8 @@ import { DataService } from './data.service';
 import { CartService } from './cart.service';
 
 export class DishesService {
+    public static readonly $inject: string[] = [DataService.serviceName, CartService.serviceName];
     public static readonly serviceName: string = 'DishesService';
-    public static readonly $inject: string[] = [DataService.name, CartService.name];
     constructor(private dataService: DataService, private cartService: CartService) {
     }
 

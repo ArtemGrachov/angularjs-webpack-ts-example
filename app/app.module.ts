@@ -11,6 +11,7 @@ import { MainModule } from './modules/main/main.module';
 import { OrdersModule } from './modules/orders/orders.module';
 import { InfoModule } from './modules/info/info.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { AdminModule } from './modules/admin/admin.module';
 
 import { DataService } from './services/data.service';
 import { DishesService } from './services/dishes.service';
@@ -22,6 +23,7 @@ import { AuthService } from './services/auth.service';
 
 export const app = angular.module('app', [
     uiRouter,
+    AdminModule.name,
     MainModule.name,
     InfoModule.name,
     'ui.bootstrap',
@@ -45,3 +47,10 @@ export const app = angular.module('app', [
     .service(CartService.serviceName, CartService)
     .service(FeedbackService.serviceName, FeedbackService)
     .service(AuthService.serviceName, AuthService)
+    // .service('dataService', DataService)
+    // .service('dishesService', DishesService)
+    // .service('restaurantsService', RestaurantsService)
+    // .service('ordersSerice', OrdersService)
+    // .service('cartService', CartService)
+    // .service(FeedbackService.serviceName, FeedbackService)
+    // .service(AuthService.serviceName, AuthService)

@@ -22,7 +22,6 @@ class Controller {
 
     removeCartItem(id: string) {
         this.cartService.removeFromCart(id);
-        console.log(id)
     }
 }
 

@@ -1,13 +1,13 @@
 import { IStateProvider, IUrlRouterProvider, IStateService } from 'angular-ui-router'
 import { AuthService } from '../../services/auth.service';
 
-export const AuthRouter = function ($stateProvider: IStateProvider, $urlRouterProvider: IUrlRouterProvider) {
+export const AuthRouter = ['$stateProvider', '$urlRouterProvider', function ($stateProvider: IStateProvider, $urlRouterProvider: IUrlRouterProvider) {
     $stateProvider
         .state('profile', {
             url: '/profile',
             component: 'appProfile',
             resolve: {
-                checkAuth: [AuthService.name, '$state', function (authService: AuthService, $state: IStateService) {
+                checkAuth: [AuthService.serviceName, '$state', function (authService: AuthService, $state: IStateService) {
                     return new Promise((res: any, rej: any) => {
                         if (authService.user) {
                             res();
@@ -23,7 +23,7 @@ export const AuthRouter = function ($stateProvider: IStateProvider, $urlRouterPr
             url: '/auth',
             component: 'appAuth',
             resolve: {
-                checkAuth: [AuthService.name, '$state', function (authService: AuthService, $state: IStateService) {
+                checkAuth: [AuthService.serviceName, '$state', function (authService: AuthService, $state: IStateService) {
                     return new Promise((res: any, rej: any) => {
                         if (!authService.user) {
                             res();
@@ -35,4 +35,4 @@ export const AuthRouter = function ($stateProvider: IStateProvider, $urlRouterPr
                 }]
             }
         })
-}
+}]

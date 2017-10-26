@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const extractCss = new ExtractTextPlugin({
     filename: 'bundle.css'
@@ -30,10 +31,7 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015'],
-                        plugins: [
-                            'angularjs-annotate'
-                        ]
+                        presets: ['es2015']
                     },
                 }],
                 exclude: /node_modules/
@@ -45,7 +43,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: './assets/'
+                        outputPath: './assets/fonts'
                     }
                 }]
             }, {
@@ -71,7 +69,15 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader'
+                use: [{
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true,
+                        removeComments: true,
+                        collapseWhitespace: true,
+                        conservativeCollapse: true
+                    }
+                }]
             }
         ]
     },
@@ -84,6 +90,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './index.html'
-        })
+        }),
+        new UglifyJSPlugin()
     ]
 }

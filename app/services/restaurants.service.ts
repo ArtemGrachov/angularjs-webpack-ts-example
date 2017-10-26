@@ -4,8 +4,8 @@ import { IPromise } from 'angular';
 
 export class RestaurantsService {
     constructor(private dataService: DataService) { }
-    static readonly $inject: string[] = [DataService.name];
-    static readonly serviceName: string = 'RestaurantsService';
+    static readonly $inject: string[] = [DataService.serviceName];
+    public static readonly serviceName: string = 'RestaurantsService';
 
     addRestaurant(restaurant: Restaurant): Promise<any> {
         return this.dataService.post('/restaurants/', restaurant);

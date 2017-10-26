@@ -16,9 +16,9 @@ export class AuthService {
                 }
             })
     };
-    static readonly $inject: string[] = ['$rootScope'];
-    private fire: any = firebase;
+    public static readonly $inject: string[] = ['$rootScope'];
     public static readonly serviceName: string = 'AuthService';
+    private fire: any = firebase;
     private auth: any = this.fire.auth();
     public user: any;
     public userId: string;

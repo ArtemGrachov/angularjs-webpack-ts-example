@@ -1,6 +1,6 @@
 import { IStateProvider, IUrlRouterProvider } from 'angular-ui-router'
 
-export const OrdersRouter = function ($stateProvider: IStateProvider, $urlRouterProvider: IUrlRouterProvider) {
+export const OrdersRouter = ['$stateProvider', '$urlRouterProvider', function ($stateProvider: IStateProvider, $urlRouterProvider: IUrlRouterProvider) {
     $stateProvider
         .state('dishes', {
             url: '/dishes',
@@ -14,4 +14,4 @@ export const OrdersRouter = function ($stateProvider: IStateProvider, $urlRouter
             url: '/order',
             component: 'appOrder'
         })
-}
+}]

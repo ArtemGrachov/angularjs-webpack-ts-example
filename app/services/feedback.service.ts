@@ -5,7 +5,7 @@ import { IPromise } from 'angular';
 export class FeedbackService {
     constructor(private dataService: DataService) { }
     static readonly $inject: string[] = [DataService.serviceName];
-    static readonly serviceName: string = 'FeedbackService';
+    public static readonly serviceName: string = 'FeedbackService';
 
     sendFeedback(feedback: Feedback): Promise<any> {
         return this.dataService.post('feedbacks', feedback);

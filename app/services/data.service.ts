@@ -3,8 +3,8 @@ import { IHttpPromise, IHttpService, IPromise } from 'angular';
 import * as firebase from 'firebase';
 
 export class DataService {
-    public static readonly serviceName: string = 'DataService';
     public static readonly $inject: string[] = ['$http'];
+    public static readonly serviceName: string = 'DataService';
 
     constructor(private $http: IHttpService, private fire: any = firebase) { }
 

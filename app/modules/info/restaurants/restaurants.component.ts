@@ -4,7 +4,7 @@ import { RestaurantsService } from '../../../services/restaurants.service';
 
 class Controller {
     constructor(private restaurantsService: RestaurantsService, private $scope: IScope) { }
-    static readonly $inject: string[] = [RestaurantsService.name, '$scope'];
+    static readonly $inject: string[] = [RestaurantsService.serviceName, '$scope'];
     private restaurantsObs: any;
     public restaurants: Restaurant[] = [];
     $onInit() {

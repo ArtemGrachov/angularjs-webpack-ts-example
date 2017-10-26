@@ -6,7 +6,6 @@ export class CartService {
         }
     }
     public static readonly serviceName: string = 'CartService';
-
     private cart: string[] = [];
 
     addToCart(dishId: string): void {
