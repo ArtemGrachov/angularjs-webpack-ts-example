@@ -1,3 +1,5 @@
+import './cart-item.component.scss';
+
 import { IComponentOptions, IScope } from 'angular';
 import { DishesService } from '../../../../services/dishes.service';
 

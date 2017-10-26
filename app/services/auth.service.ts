@@ -11,11 +11,8 @@ export class AuthService {
                         .database()
                         .ref('users/' + user.uid)
                         .on('value', () => this.getUserData(user.uid))
-                    console.log('auth state changed: login');
                 } else {
                     this.user = null;
-                    this.$rootScope.$apply();
-                    console.log('auth state changed: logout')
                 }
             })
     };
@@ -27,15 +24,9 @@ export class AuthService {
     public userId: string;
 
     login(userForm: any) {
-        console.log('auth service user form', userForm)
         return this.auth
             .signInWithEmailAndPassword(userForm.email, userForm.password)
-            .then((res: any) => {
-                console.log(res)
-            })
-            .catch((err: any) => {
-                console.log(err)
-            })
+
     }
 
     logout() {
@@ -43,7 +34,6 @@ export class AuthService {
     }
 
     reg(regForm: any) {
-        console.log('auth service reg form', regForm);
         this.auth
             .createUserWithEmailAndPassword(regForm.email, regForm.password)
             .then((res: any) => {
@@ -52,7 +42,6 @@ export class AuthService {
                 regForm.role = 'user';
                 this.createUserData(res.uid, regForm);
             })
-            .catch((err: any) => console.log(err))
     }
 
     createUserData(userId: string, userData: any) {
@@ -74,8 +63,6 @@ export class AuthService {
             .database()
             .ref('users/' + userId)
             .on('value', (res: any) => {
-                console.log('userdata subscribe');
-                console.log('userdata', res.val())
                 this.user = res.val();
             })
     }

@@ -19,6 +19,11 @@ class Controller {
         }
         this.ordersService.sendOrder(this.orderForm);
     }
+
+    removeCartItem(id: string) {
+        this.cartService.removeFromCart(id);
+        console.log(id)
+    }
 }
 
 export const OrderComponent: IComponentOptions = {

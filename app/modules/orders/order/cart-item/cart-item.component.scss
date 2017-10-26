@@ -1,0 +1,10 @@
+.cart-item {
+    &-remove {
+        color: red;
+        font-size: 12px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    vertical-align: middle;
+    line-height: 1;
+}

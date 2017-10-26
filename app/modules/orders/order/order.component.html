@@ -2,7 +2,8 @@
 <div class="row">
     <div class="col-md-6">
         <ul class="list-group">
-            <app-cart-item dish-id="dishId" ng-repeat="dishId in $ctrl.cartService.cart track by $index"></app-cart-item>
+            <app-cart-item dish-id="dishId" ng-repeat="dishId in $ctrl.cartService.cart track by $index" class="list-group-item cart-item"
+                ng-click="$ctrl.removeCartItem(dishId)"></app-cart-item>
         </ul>
         <form class="panel panel-default" ng-submit="$ctrl.sendOrder()" novalidate name="orderF">
             <div class="panel-body">
