@@ -24,5 +24,15 @@ export const AdminRouter = ['$stateProvider', '$urlRouterProvider', function ($s
             component: 'appAdminDishes',
             parent: 'admin'
         })
+        .state('admin-dish-new', {
+            url: '/new',
+            component: 'appAdminDish',
+            parent: 'admin'
+        })
+        .state('admin-dish', {
+            url: '/:id',
+            component: 'appAdminDish',
+            parent: 'admin'
+        })
     $urlRouterProvider.when('admin', '/admin/dishes')
 }]

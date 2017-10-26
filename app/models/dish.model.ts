@@ -5,6 +5,7 @@ export class Dish {
         public imageUrl: string = '',
         public description: string = 'This dish has not any description.',
         public ingredients: string[] = [],
+        public category: string = '',
         public date: number = 0
     ) { }
 }

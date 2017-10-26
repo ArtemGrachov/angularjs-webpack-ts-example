@@ -74,12 +74,12 @@ module.exports = {
                 test: /\.html$/,
                 use: [{
                     loader: 'html-loader',
-                    options: {
-                        minimize: true,
-                        removeComments: true,
-                        collapseWhitespace: true,
-                        conservativeCollapse: true
-                    }
+                    // options: {
+                    //     minimize: true,
+                    //     removeComments: true,
+                    //     collapseWhitespace: true,
+                    //     conservativeCollapse: true
+                    // }
                 }]
             }
         ]
@@ -96,6 +96,6 @@ module.exports = {
             template: './index.html',
             chunks: ['common', 'app']
         }),
-        new UglifyJSPlugin()
+        // new UglifyJSPlugin()
     ]
 }

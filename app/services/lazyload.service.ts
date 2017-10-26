@@ -6,7 +6,6 @@ export class LazyLoadService {
     public static readonly $inject: string[] = ['$ocLazyLoad'];
 
     loadAdmin() {
-        console.log('loading admin module');
         this.$ocLazyLoad.load('./admin.bundle.js');
     }
 }
