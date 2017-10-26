@@ -1,8 +1,11 @@
 import * as firebase from 'firebase';
 import { IRootScopeService } from 'angular';
+import { LazyLoadService } from './lazyload.service';
 
 export class AuthService {
-    constructor(private $rootScope: IRootScopeService) {
+    public static readonly $inject: string[] = ['$rootScope', LazyLoadService.serviceName];
+    public static readonly serviceName: string = 'AuthService';
+    constructor(private $rootScope: IRootScopeService, private lazyLoadService: LazyLoadService) {
         this.auth
             .onAuthStateChanged((user: any) => {
                 if (user) {
@@ -16,8 +19,6 @@ export class AuthService {
                 }
             })
     };
-    public static readonly $inject: string[] = ['$rootScope'];
-    public static readonly serviceName: string = 'AuthService';
     private fire: any = firebase;
     private auth: any = this.fire.auth();
     public user: any;
@@ -64,6 +65,9 @@ export class AuthService {
             .ref('users/' + userId)
             .on('value', (res: any) => {
                 this.user = res.val();
+                if (this.user.role == 'admin') {
+                    this.lazyLoadService.loadAdmin();
+                }
             })
     }
 }

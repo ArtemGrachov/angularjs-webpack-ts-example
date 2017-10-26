@@ -9,3 +9,5 @@ export const AdminModule: IModule = angular.module('adminModule', [])
     .component('appAdmin', AdminComponent)
     .component('appAdminDishes', AdminDishesComponent)
     .config(AdminRouter)
+
+console.log('admin module loaded')

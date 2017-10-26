@@ -16,10 +16,13 @@ const PATHS = {
 
 module.exports = {
     context: PATHS.app,
-    entry: './app.module.ts',
+    entry: {
+        app: './app.module.ts',
+        admin: './modules/admin/admin.module.ts'
+    },
     output: {
         path: PATHS.dist,
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [{
@@ -87,9 +90,11 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         extractCss,
+        new webpack.optimize.CommonsChunkPlugin('common'),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './index.html'
+            template: './index.html',
+            chunks: ['common', 'app']
         }),
         new UglifyJSPlugin()
     ]
