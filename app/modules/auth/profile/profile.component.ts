@@ -1,18 +1,31 @@
 import { IComponentOptions } from 'angular';
 import { AuthService } from '../../../services/auth.service';
+import { IStateService } from 'angular-ui-router';
 
 class Controller {
-    constructor(private authService: AuthService) { }
-    static readonly $inject: string[] = [AuthService.serviceName];
+    constructor(private authService: AuthService, private $state: IStateService) { }
+    static readonly $inject: string[] = [AuthService.serviceName, '$state'];
+    private authObs: any;
 
     public profileForm: any;
     public editMode: boolean = false;
 
-    toggleEdit() {
+    public $onInit() {
+        this.authObs = this.authService.auth.onAuthStateChanged((user: any) => {
+            if (!user) {
+                this.$state.go('auth');
+            }
+        })
+    }
+    public $onDestroy() {
+        this.authObs();
+    }
+
+    public toggleEdit() {
         this.editMode = !this.editMode;
     }
 
-    updateProfile() {
+    public updateProfile() {
         // test
         if (!this.profileForm) {
             this.profileForm = {}

@@ -1,19 +1,13 @@
 import { IComponentOptions, IRootScopeService } from 'angular';
-import { IStateService } from 'angular-ui-router';
 import { AuthService } from '../../../services/auth.service';
 
 class Controller {
-    constructor(private authService: AuthService, private $state: IStateService) { }
-    static readonly $inject: string[] = [AuthService.serviceName, '$state'];
+    constructor(private authService: AuthService) { }
+    static readonly $inject: string[] = [AuthService.serviceName];
     public loginForm: any;
 
-    login() {
-        this.authService.login(this.loginForm).then(
-            (res: any) => {
-                console.log('login cmp')
-                this.$state.go('profile')
-            }
-        );
+    login(event: any) {
+        this.authService.login(this.loginForm);
     }
 }
 

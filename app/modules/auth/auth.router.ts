@@ -9,7 +9,7 @@ export const AuthRouter = ['$stateProvider', '$urlRouterProvider', function ($st
             resolve: {
                 checkAuth: [AuthService.serviceName, '$state', function (authService: AuthService, $state: IStateService) {
                     return new Promise((res: any, rej: any) => {
-                        if (authService.user) {
+                        if (authService.auth.currentUser) {
                             res();
                         } else {
                             rej();
