@@ -1,13 +1,19 @@
 import { IComponentOptions } from 'angular';
-// test
 import { AuthService } from '../../../services/auth.service';
-// test
+import { IStateService } from 'angular-ui-router';
 
 class Controller {
-    //test
-    constructor(private authService: AuthService) { }
-    static readonly $inject: string[] = [AuthService.serviceName];
-    //test
+    constructor(private authService: AuthService, private $state: IStateService) { }
+    static readonly $inject: string[] = [AuthService.serviceName, '$state'];
+
+    $onInit() {
+        this.authService.auth
+            .onAuthStateChanged((user: any) => {
+                if (user) {
+                    this.$state.go('profile')
+                }
+            })
+    }
 }
 
 export const AuthComponent: IComponentOptions = {

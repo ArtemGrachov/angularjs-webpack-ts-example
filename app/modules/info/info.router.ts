@@ -19,4 +19,5 @@ export const InfoRouter = ['$stateProvider', '$urlRouterProvider', function ($st
             url: '/greeting',
             component: 'appGreeting'
         })
+    $urlRouterProvider.when('', '/greeting')
 }]

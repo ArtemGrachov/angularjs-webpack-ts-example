@@ -20,7 +20,9 @@ class Controller {
             this.dataObs = this.serviceGet(this.stateParams.id);
             this.dataObs.on('value', (res: any) => {
                 this.data = res.val();
-                this.$scope.$apply()
+                // ???
+                this.$scope.$apply();
+                // ???
             })
         } else {
             this.data = this.params.data;
@@ -36,6 +38,9 @@ class Controller {
     submit() {
         if (this.params.serviceGet) {
             this.data.description = 'updated with edit cmp';
+            // ???
+            this.dataObs.off();
+            // ???
             console.log(this.data)
             this.serviceSend(this.stateParams.id, this.data);
         } else {

@@ -9,16 +9,15 @@ class Controller {
     public editParams: any;
     $onInit() {
         console.log(this.$stateParams)
-        const _this = this;
         if (this.$stateParams.id) {
             this.editParams = {
-                serviceGet: _this.dishesService.getDish,
-                serviceSend: _this.dishesService.updateDish
+                serviceGet: this.dishesService.getDish,
+                serviceSend: this.dishesService.updateDish
             }
         } else {
             this.editParams = {
                 data: new Dish(),
-                serviceSend: _this.dishesService.addDish
+                serviceSend: this.dishesService.addDish
             }
         }
     }

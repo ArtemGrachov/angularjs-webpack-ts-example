@@ -16,25 +16,25 @@ export class AuthService {
                         .on('value', () => this.getUserData(user.uid))
                 } else {
                     this.user = null;
+                    this.$rootScope.$apply();
                 }
             })
     };
     private fire: any = firebase;
-    private auth: any = this.fire.auth();
+    public auth: any = this.fire.auth();
     public user: any;
     public userId: string;
 
-    login(userForm: any) {
+    public login(userForm: any) {
         return this.auth
             .signInWithEmailAndPassword(userForm.email, userForm.password)
-
     }
 
-    logout() {
+    public logout() {
         this.auth.signOut();
     }
 
-    reg(regForm: any) {
+    public reg(regForm: any) {
         this.auth
             .createUserWithEmailAndPassword(regForm.email, regForm.password)
             .then((res: any) => {
@@ -45,21 +45,21 @@ export class AuthService {
             })
     }
 
-    createUserData(userId: string, userData: any) {
+    public createUserData(userId: string, userData: any) {
         this.fire
             .database()
             .ref('users/' + userId)
             .set(userData)
     }
 
-    updateUserData(userId: string, userData: any): void {
+    public updateUserData(userId: string, userData: any): void {
         this.fire
             .database()
             .ref('users/' + userId)
             .update(userData)
     }
 
-    getUserData(userId: string): any {
+    public getUserData(userId: string): any {
         this.fire
             .database()
             .ref('users/' + userId)
@@ -68,6 +68,7 @@ export class AuthService {
                 if (this.user.role == 'admin') {
                     this.lazyLoadService.loadAdmin();
                 }
+                this.$rootScope.$apply();
             })
     }
 }
