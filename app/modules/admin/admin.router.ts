@@ -8,6 +8,11 @@ export const AdminRouter = ['$stateProvider', '$urlRouterProvider', function ($s
             parent: 'admin',
             component: 'appAdminList'
         })
+        .state('admin-details', {
+            url: '/:list/:id',
+            parent: 'admin',
+            component: 'appAdminDetails'
+        })
         .state('admin', {
             url: '/admin',
             component: 'appAdmin',

@@ -7,15 +7,19 @@ export class FeedbackService {
     static readonly $inject: string[] = [DataService.serviceName];
     public static readonly serviceName: string = 'FeedbackService';
 
-    sendFeedback(feedback: Feedback): Promise<any> {
-        return this.dataService.post('feedbacks', feedback);
+    sendFeedback(feedback: Feedback): any {
+        return this.dataService.post('/feedbacks/', feedback);
     }
 
-    getFeedbacks(): Promise<any> {
-        return this.dataService.get('feedbacks')
+    getFeedbacks(): any {
+        return this.dataService.get('/feedbacks/')
     }
 
-    deleteFeedback(id: string): Promise<any> {
-        return this.dataService.remove('feedbacks/' + id);
+    getFeedback(id: string): any {
+        return this.dataService.get('/feedbacks/' + id);
+    }
+
+    deleteFeedback(id: string): any {
+        return this.dataService.remove('/feedbacks/' + id);
     }
 }

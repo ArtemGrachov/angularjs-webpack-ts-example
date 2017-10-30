@@ -1,9 +1,11 @@
-<div class="btn-group">
-    <a ui-sref="admin-list({list:'dishes'})" ui-sref-active="active" class="btn btn-default">Dishes</a>
-    <a ui-sref="admin-list({list:'restaurants'})" ui-sref-active="active" class="btn btn-default">Restaurants</a>
-    <a ui-sref="admin-list({list:'orders'})" ui-sref-active="active" class="btn btn-default">Orders</a>
-    <!-- <a ui-sref="admin-list({list:'users'})" class="btn btn-default">Users</a>
-    <a ui-sref="admin-list({list:'couriers'})" class="btn btn-default">Couriers</a> -->
-    <a ui-sref="admin-list({list:'feedbacks'})" ui-sref-active="active" class="btn btn-default">Feedbacks</a>
-</div>
+<nav class="admin-nav">
+    <div class="btn-group">
+        <a ui-sref="admin-list({list:'dishes'})" ui-sref-active="active" class="btn btn-default">Dishes</a>
+        <a ui-sref="admin-list({list:'restaurants'})" ui-sref-active="active" class="btn btn-default">Restaurants</a>
+        <a ui-sref="admin-list({list:'orders'})" ui-sref-active="active" class="btn btn-default">Orders</a>
+        <!-- <a ui-sref="admin-list({list:'users'})" class="btn btn-default">Users</a>
+                <a ui-sref="admin-list({list:'couriers'})" class="btn btn-default">Couriers</a> -->
+        <a ui-sref="admin-list({list:'feedbacks'})" ui-sref-active="active" class="btn btn-default">Feedbacks</a>
+    </div>
+</nav>
 <ui-view></ui-view>

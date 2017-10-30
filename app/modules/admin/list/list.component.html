@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in $ctrl.list track by $index">
+        <tr ng-repeat="(id,item) in $ctrl.list track by $index" ui-sref="admin-details({list: $ctrl.listName, id: id})">
             <td>{{$index + 1}}</td>
             <td ng-repeat="val in $ctrl.cols">
                 <span ng-if="val.val != 'email' && val.val != 'price'">{{item[val.val]}}</span>

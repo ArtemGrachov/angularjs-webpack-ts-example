@@ -1,0 +1,6 @@
+<form>
+    <div class="form-group" ng-repeat="label in $ctrl.labels">
+        <label>{{label.text}}</label>
+        {{$ctrl.data[label.val]}}
+    </div>
+</form>

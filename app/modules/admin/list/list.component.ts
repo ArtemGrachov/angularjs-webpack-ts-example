@@ -27,9 +27,11 @@ class Controller {
     public listObs: any;
     public list: any[];
     public cols: { text: string, val: string }[];
+    public listName: string;
 
     $onInit() {
-        switch (this.$state.params.list) {
+        this.listName = this.$state.params.list;
+        switch (this.listName) {
             case 'dishes':
                 this.dishesLoader();
                 break;
