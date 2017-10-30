@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <ul class="nav navbar-nav">
-                        <li>
+                        <li ui-sref-active="active">
                             <a ui-sref="order">
                                 <span class="glyphicon glyphicon-shopping-cart cart-link"></span>
                                 <div class="nav-number">
@@ -26,25 +26,25 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
+                        <li ui-sref-active="active">
                             <a ui-sref="greeting">
                                 <span class="glyphicon glyphicon-info-sign"></span>
                                 Main page
                             </a>
                         </li>
-                        <li>
+                        <li ui-sref-active="active">
                             <a ui-sref="dishes">
                                 <span class="glyphicon glyphicon-apple"></span>
                                 Dishes
                             </a>
                         </li>
-                        <li>
+                        <li ui-sref-active="active">
                             <a ui-sref="restaurants">
                                 <span class="glyphicon glyphicon-cutlery"></span>
                                 Restaurants
                             </a>
                         </li>
-                        <li>
+                        <li ui-sref-active="active">
                             <a ui-sref="feedback">
                                 <span class="glyphicon glyphicon-comment"></span>
                                 Contact us
@@ -52,33 +52,33 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li ng-if="$ctrl.authService.user">
+                        <li ng-if="$ctrl.authService.user" ui-sref-active="active">
                             <a ui-sref="profile">
                                 <span class="glyphicon glyphicon-user"></span>
                                 Profile
                             </a>
                         </li>
-                        <li ng-if="$ctrl.authService.user.role === 'admin'">
+                        <li ng-if="$ctrl.authService.user.role === 'admin'" ui-sref-active="active">
                             <a ui-sref="admin">
                                 <span class="glyphicon glyphicon-dashboard"></span>
                                 Admin panel
                                 <div class="nav-number">0</div>
                             </a>
                         </li>
-                        <li ng-if="$ctrl.authService.user.role === 'courier'">
+                        <li ng-if="$ctrl.authService.user.role === 'courier'" ui-sref-active="active">
                             <a href="">
                                 <span class="glyphicon glyphicon-briefcase"></span>
                                 Couriers page
                             </a>
                             <div class="nav-number">0</div>
                         </li>
-                        <li ng-if="!$ctrl.authService.user">
+                        <li ng-if="!$ctrl.authService.user" ui-sref-active="active">
                             <a ui-sref="auth">
                                 <span class="glyphicon glyphicon-lock"></span>
                                 Authentcation
                             </a>
                         </li>
-                        <li ng-if="$ctrl.authService.user">
+                        <li ng-if="$ctrl.authService.user" ui-sref-active="active">
                             <a ng-click="$ctrl.authService.logout()" class="pointer">
                                 <span class="glyphicon glyphicon-log-out"></span>
                                 Logout

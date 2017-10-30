@@ -12,7 +12,9 @@
         <tr ng-repeat="item in $ctrl.list track by $index">
             <td>{{$index + 1}}</td>
             <td ng-repeat="val in $ctrl.cols">
-                {{item[val.val]}}
+                <span ng-if="val.val != 'email' && val.val != 'price'">{{item[val.val]}}</span>
+                <strong ng-if="val.val == 'price'">{{item[val.val]}}</strong>
+                <a href="mailto:{{item[val.val]}}" ng-if="val.val == 'email'">{{item[val.val]}}</a>
             </td>
             <td>Edit</td>
         </tr>
