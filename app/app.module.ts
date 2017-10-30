@@ -35,7 +35,7 @@ export const app = angular.module('app', [
     AuthModule.name,
     'oc.lazyLoad'
 ])
-    .config(function (fire: any = firebase) {
+    .run(function (fire: any = firebase) {
         fire.initializeApp(firebaseConfig, '[DEFAULT]');
     })
     .service(LazyLoadService.serviceName, LazyLoadService)
@@ -46,10 +46,3 @@ export const app = angular.module('app', [
     .service(CartService.serviceName, CartService)
     .service(FeedbackService.serviceName, FeedbackService)
     .service(AuthService.serviceName, AuthService)
-    // .service('dataService', DataService)
-    // .service('dishesService', DishesService)
-    // .service('restaurantsService', RestaurantsService)
-    // .service('ordersSerice', OrdersService)
-    // .service('cartService', CartService)
-    // .service(FeedbackService.serviceName, FeedbackService)
-    // .service(AuthService.serviceName, AuthService)

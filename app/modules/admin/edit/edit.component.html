@@ -1,9 +1,5 @@
 <form ng-submit="$ctrl.submit()">
-    DATA:{{$ctrl.data}}
-    <div class="form-group" ng-repeat="(key, val) in $ctrl.data">
-        <label>{{key}}</label>
-        <input type="text" class="form-control" value="{{val}}">
+    <div class="form-group" edit-element ng-repeat="(key,val) in $ctrl.data">
     </div>
-
     <button type="submit" class="btn btn-default">SUBMIT</button>
 </form>

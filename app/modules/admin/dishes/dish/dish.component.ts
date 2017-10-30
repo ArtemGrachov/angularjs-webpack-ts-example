@@ -8,7 +8,6 @@ class Controller {
     public static readonly $inject: string[] = [DishesService.serviceName, '$stateParams'];
     public editParams: any;
     $onInit() {
-        console.log(this.$stateParams)
         if (this.$stateParams.id) {
             this.editParams = {
                 serviceGet: this.dishesService.getDish,

@@ -7,6 +7,7 @@ import { AdminDishComponent } from './dishes/dish/dish.component';
 import { AdminEditComponent } from './edit/edit.component';
 
 import { DishesRowDirective } from './dishes/dishes-row/dishes-row.directive';
+import { EditElementDirective } from './edit/edit-element/edit-element.directive';
 
 import { AdminRouter } from './admin.router';
 
@@ -16,4 +17,5 @@ export const AdminModule: IModule = angular.module('adminModule', [])
     .component('appAdminDish', AdminDishComponent)
     .component('appAdminEdit', AdminEditComponent)
     .directive('dishesRow', DishesRowDirective)
+    .directive('editElement', EditElementDirective)
     .config(AdminRouter)

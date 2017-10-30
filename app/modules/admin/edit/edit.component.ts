@@ -15,7 +15,7 @@ class Controller {
     $onInit() {
         this.serviceSend = this.params.serviceSend;
         if (this.params.serviceGet) {
-            console.log(this.params.serviceGet)
+            // console.log(this.params.serviceGet)
             this.serviceGet = this.params.serviceGet;
             this.dataObs = this.serviceGet(this.stateParams.id);
             this.dataObs.on('value', (res: any) => {
@@ -41,10 +41,10 @@ class Controller {
             // ???
             this.dataObs.off();
             // ???
-            console.log(this.data)
+            // console.log(this.data)
             this.serviceSend(this.stateParams.id, this.data);
         } else {
-            console.log(this.data)
+            // console.log(this.data)
             this.serviceSend(this.data);
         }
     }

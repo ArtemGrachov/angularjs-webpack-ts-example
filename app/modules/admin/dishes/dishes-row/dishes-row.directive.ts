@@ -1,4 +1,3 @@
-import { IDirective } from 'angular';
 import { DishesService } from '../../../../services/dishes.service'
 
 export const DishesRowDirective = [DishesService.serviceName, function (dishesService: DishesService) {
