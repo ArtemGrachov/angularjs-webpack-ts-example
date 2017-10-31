@@ -28,3 +28,14 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+.admin {
+    &-dish-img {
+        padding: 5px;
+        border: 2px dashed lightgrey;
+        border-radius: 10px;
+    }
+    &-nav {
+        margin-bottom: 40px;
+    }
+}

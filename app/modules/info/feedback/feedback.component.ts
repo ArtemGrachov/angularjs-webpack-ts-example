@@ -9,7 +9,7 @@ class Controller {
 
     sendFeedback() {
         this.feedbackService.sendFeedback(this.feedbackForm);
-        this.feedbackForm = new Feedback();
+        this.feedbackForm = { name: 'Guest', email: '', phone: '', message: '' };
     }
 }
 

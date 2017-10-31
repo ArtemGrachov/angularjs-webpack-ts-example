@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="(id,item) in $ctrl.list track by $index" dishes-item="item" id="id" index="$index">
+        <tr ui-sref="admin-dish({id:id})" ng-repeat="(id,item) in $ctrl.list track by $index" dishes-item="item" id="id" index="$index">
         </tr>
     </tbody>
 </table>
