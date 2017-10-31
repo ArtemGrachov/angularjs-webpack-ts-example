@@ -1,0 +1,8 @@
+<span class="admin-dish-ingredient" ng-repeat="ingredient in dir.ngModel track by $index" ng-click="dir.remove($index)">
+    {{ingredient}}</span>
+<div class="input-group">
+    <span class="input-group-addon" ng-click="dir.add()">
+        <i class="glyphicon glyphicon-plus"></i>
+    </span>
+    <input type="text" class="form-control" ng-model="dir.new">
+</div>

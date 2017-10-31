@@ -4,6 +4,8 @@ import { Dish } from '../../../models/dish.model';
 import { DishesService } from '../../../services/dishes.service';
 import { CartService } from '../../../services/cart.service';
 
+import './dishes.component.scss';
+
 class Controller {
     constructor(
         private dishesService: DishesService,

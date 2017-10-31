@@ -14,5 +14,5 @@
     {{dish.ingredients.join(', ')}}
 </td>
 <td>
-    {{dish.date}}
+    {{dish.date | date : 'HH:mm:ss, dd.MM.yyyy' }}
 </td>

@@ -30,10 +30,22 @@
 }
 
 .admin {
-    &-dish-img {
-        padding: 5px;
-        border: 2px dashed lightgrey;
-        border-radius: 10px;
+    &-dish {
+        &-img {
+            padding: 5px;
+            border: 1px dashed lightgrey;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        &-ingredient {
+            padding: 2px 10px;
+            display: inline-block;
+            margin: 3px 3px 3px 0;
+            background: rgb(126, 126, 126);
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
     }
     &-nav {
         margin-bottom: 40px;

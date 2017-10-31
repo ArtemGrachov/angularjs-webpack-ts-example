@@ -3,7 +3,7 @@ export class EditService {
     getUpdated(form: any) {
         let updated: any = {};
         for (let control of form.$$controls) {
-            if (control.$dirty) {
+            if (control.$dirty && control.$name) {
                 updated[control.$name] = control.$modelValue;
             }
         }

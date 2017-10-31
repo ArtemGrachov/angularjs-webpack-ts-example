@@ -10,7 +10,7 @@
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                     Add to cart
                 </button>
-                <button class="btn btn-default btn-block" ng-click="$ctrl.removeFromCart()">
+                <button class="btn btn-default btn-block" ng-click="$ctrl.removeFromCart()" ng-disabled="$ctrl.inCart == 0">
                     <span class="glyphicon glyphicon-remove"></span>
                     Remove from cart
                 </button>
@@ -24,11 +24,10 @@
                     {{$ctrl.dish.name}}
                     <app-dish-cart-counter in-cart="$ctrl.inCart"></app-dish-cart-counter>
                 </div>
-                <ul class="dish-preview-list">
-                    <li class="dish-preview-item" ng-repeat="ingredient in $ctrl.dish.ingredients">
-                        {{ingredient}}
-                    </li>
-                </ul>
+                <div class="dish-category">
+                    {{$ctrl.category}}
+                </div>
+                <span class="dish-ingredient" ng-repeat="ingredient in $ctrl.dish.ingredients">{{ingredient}}</span>
             </div>
         </div>
     </div>
