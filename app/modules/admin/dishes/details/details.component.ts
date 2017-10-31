@@ -10,7 +10,7 @@ class Controller {
     public dish: Dish;
     public edit: boolean = false;
     public dishObs: any;
-    public submit = this.editService.submit;
+    public detailsForm: any;
 
     $onInit() {
         this.dishObs = this.dishesService.getDish(this.$state.params.id);
@@ -34,6 +34,13 @@ class Controller {
     }
     toggleEdit() {
         this.edit = !this.edit;
+    }
+    submit() {
+        this.dishesService
+            .updateDish(
+            this.$state.params.id,
+            this.editService.getUpdated(this.detailsForm)
+            )
     }
 }
 
