@@ -3,16 +3,6 @@ import { AuthService } from '../../services/auth.service';
 
 export const AdminRouter = ['$stateProvider', '$urlRouterProvider', function ($stateProvider: IStateProvider, $urlRouterProvider: IUrlRouterProvider) {
     $stateProvider
-        .state('admin-list', {
-            url: '/:list',
-            parent: 'admin',
-            component: 'appAdminList'
-        })
-        .state('admin-details', {
-            url: '/:list/:id',
-            parent: 'admin',
-            component: 'appAdminDetails'
-        })
         .state('admin', {
             url: '/admin',
             component: 'appAdmin',
@@ -28,6 +18,11 @@ export const AdminRouter = ['$stateProvider', '$urlRouterProvider', function ($s
                         .catch((err: any) => $state.go('auth'))
                 }]
             }
+        })
+        .state('admin-dishes', {
+            url: '/dishes',
+            parent: 'admin',
+            component: 'appAdminDishes'
         })
 
     // $urlRouterProvider.when('admin', '/admin/dishes')
