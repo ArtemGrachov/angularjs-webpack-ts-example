@@ -4,48 +4,40 @@ import { DishesService } from '../../../../services/dishes.service';
 import { EditService } from '../../edit.service';
 import { Dish } from '../../../../models/dish.model';
 
-class Controller {
-    constructor(private $scope: IScope, private $state: IState, private editService: EditService, private dishesService: DishesService) { }
-    public static readonly $inject: string[] = ['$scope', '$state', EditService.serviceName, DishesService.serviceName];
-    public dish: Dish;
-    public edit: boolean = false;
-    private dishObs: any;
-    private catObs: any;
-    private detailsForm: any;
-    private categories: any;
-    public test: string[] = ['A', 'B', 'C']
+import { DetailsController } from '../../details-controller.class';
 
-    $onInit() {
-        this.dishObs = this.dishesService.getDish(this.$state.params.id);
-        this.dishObs
-            .on('value', (res: any) => {
-                this.dish = res.val();
-                this.$scope.$apply();
-            })
+class Controller extends DetailsController {
+    constructor($scope: IScope, $state: IState, dishesService: DishesService) {
+        super($scope, $state, dishesService)
+        this.dishesService = dishesService;
+    }
+    public static readonly $inject: string[] = ['$scope', '$state', DishesService.serviceName];
+    private catObs: any;
+    private categories: any;
+    private dishesService: DishesService;
+
+    catLoaderInit() {
         this.catObs = this.dishesService.getCategories();
         this.catObs
             .on('value', (res: any) => {
                 this.categories = res.val();
-                this.dish.categoryName = this.categories[this.dish.category];
+                this.data.categoryName = this.categories[this.data.category];
                 this.$scope.$apply();
             })
     }
 
-    $onDestroy() {
-        this.dishObs.off();
+    catLoaderUnsub() {
         this.catObs.off();
     }
 
-    toggleEdit() {
-        this.edit = !this.edit;
+    $onInit() {
+        this.loaderInit();
+        this.catLoaderInit();
     }
 
-    submit() {
-        this.dishesService
-            .updateDish(
-            this.$state.params.id,
-            this.editService.getUpdated(this.detailsForm)
-            )
+    $onDestroy() {
+        this.loaderUnsub();
+        this.catLoaderUnsub();
     }
 }
 

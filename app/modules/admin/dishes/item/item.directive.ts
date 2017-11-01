@@ -15,7 +15,7 @@ export const DishesItem = [DishesService.serviceName, function (dishesService: D
                 dishesService.getCategory($scope.dish.category)
                     .once('value')
                     .then((res: any) => {
-                        $scope.dish.categoryName = res.val();
+                        $scope.categoryName = res.val();
                         $scope.$apply();
                     })
             }

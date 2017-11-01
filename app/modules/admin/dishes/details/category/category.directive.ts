@@ -6,6 +6,7 @@ export const CategoryDirective = function () {
             this.ngModel = id;
             this.ngModelCtrl.$setDirty();
             $element.children().removeClass('open')
+            console.log(this)
         }
         this.toggle = function () {
             $element.children().toggleClass('open')

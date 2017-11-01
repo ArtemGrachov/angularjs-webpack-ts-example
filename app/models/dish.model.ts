@@ -5,6 +5,5 @@ export interface Dish {
     description: string;
     ingredients: string[];
     category: string;
-    categoryName?: string;
     date: number;
 }

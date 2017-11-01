@@ -19,7 +19,6 @@ class Controller {
     public catObs: any;
     public category: string;
     $onInit() {
-        console.log('init')
         if (this.dish.category) {
             this.catObs = this.dishesService.getCategory(this.dish.category);
             this.catObs.on('value', (res: any) => {

@@ -9,36 +9,36 @@
         <div class="form-group">
             <label>
                 Name:
-            </label> {{$ctrl.dish.name}}
-            <input type="text" class="form-control" ng-model="$ctrl.dish.name" ng-if="$ctrl.edit" name="name">
+            </label> {{$ctrl.data.name}}
+            <input type="text" class="form-control" ng-model="$ctrl.data.name" ng-if="$ctrl.edit" name="name">
         </div>
         <div class="form-group">
-            <label>Category:</label> {{$ctrl.dish.categoryName}}
-            <category-select ng-if="$ctrl.edit" ng-model="$ctrl.dish.category" categories="$ctrl.categories" name="category"></category-select>
+            <label>Category:</label> {{$ctrl.categories[$ctrl.data.category]}}
+            <category-select ng-if="$ctrl.edit" ng-model="$ctrl.data.category" categories="$ctrl.categories" name="category"></category-select>
         </div>
         <div class="form-group">
             <label>
                 Price:
-            </label> ${{$ctrl.dish.price}}
-            <input type="text" class="form-control" ng-model="$ctrl.dish.price" ng-if="$ctrl.edit" name="price">
+            </label> ${{$ctrl.data.price}}
+            <input type="text" class="form-control" ng-model="$ctrl.data.price" ng-if="$ctrl.edit" name="price">
         </div>
         <div class="form-group">
             <label>
                 Description:
-            </label> {{$ctrl.dish.description}}
-            <textarea ng-model="$ctrl.dish.description" rows="10" class="form-control" ng-if="$ctrl.edit" name="description"></textarea>
+            </label> {{$ctrl.data.description}}
+            <textarea ng-model="$ctrl.data.description" rows="10" class="form-control" ng-if="$ctrl.edit" name="description"></textarea>
         </div>
         <div class="form-group">
-            <img ng-src="{{$ctrl.dish.imageUrl}}" alt="$ctrl.dish.name" class="img-responsive admin-dish-img">
-            <label>URL:</label> {{$ctrl.dish.imageUrl}}
-            <input type="text" ng-model="$ctrl.dish.imageUrl" class="form-control" ng-if="$ctrl.edit" name="imageUrl">
+            <img ng-src="{{$ctrl.data.imageUrl}}" alt="$ctrl.data.name" class="img-responsive admin-data-img">
+            <label>URL:</label> {{$ctrl.data.imageUrl}}
+            <input type="text" ng-model="$ctrl.data.imageUrl" class="form-control" ng-if="$ctrl.edit" name="imageUrl">
         </div>
         <div class="form-group">
-            <ingredients-select ng-model="$ctrl.dish.ingredients" name="ingredients"></ingredients-select>
+            <ingredients-select ng-model="$ctrl.data.ingredients" name="ingredients"></ingredients-select>
         </div>
         <div class="form-group">
-            <label>Date:</label> {{$ctrl.dish.date | date : 'HH:mm:ss, dd.MM.yyyy' }}
-            <input type="text" class="form-control" ng-model="$ctrl.dish.date" ng-if="$ctrl.edit" name="date">
+            <label>Date:</label> {{$ctrl.data.date | date : 'HH:mm:ss, dd.MM.yyyy' }}
+            <input type="text" class="form-control" ng-model="$ctrl.data.date" ng-if="$ctrl.edit" name="date">
         </div>
     </div>
     <div class="panel-footer">
