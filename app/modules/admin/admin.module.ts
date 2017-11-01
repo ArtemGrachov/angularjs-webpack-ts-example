@@ -7,6 +7,7 @@ import { AdminDishesComponent } from './dishes/list/list.component';
 import { AdminDishComponent } from './dishes/details/details.component';
 import { DishesItem } from './dishes/item/item.directive';
 import { IngredientsDirective } from './dishes/details/ingredients/ingredients.directive';
+import { CategoryDirective } from './dishes/details/category/category.directive';
 
 import { EditService } from './edit.service';
 
@@ -19,4 +20,5 @@ export const AdminModule: IModule = angular.module('adminModule', [])
     .component('appAdminDish', AdminDishComponent)
     .directive('dishesItem', DishesItem)
     .directive('ingredientsSelect', IngredientsDirective)
+    .directive('categorySelect', CategoryDirective)
     .config(AdminRouter)

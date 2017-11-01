@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <button type="button" class="btn btn-default" ng-click="dir.toggle()">
+        {{dir.categories[dir.ngModel]}}
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li ng-repeat="(id, category) in dir.categories">
+            <a ng-click="dir.select(id)">{{category}}</a>
+        </li>
+    </ul>
+</div>

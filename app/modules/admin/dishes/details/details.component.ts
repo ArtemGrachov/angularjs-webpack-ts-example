@@ -9,32 +9,37 @@ class Controller {
     public static readonly $inject: string[] = ['$scope', '$state', EditService.serviceName, DishesService.serviceName];
     public dish: Dish;
     public edit: boolean = false;
-    public dishObs: any;
-    public detailsForm: any;
+    private dishObs: any;
+    private catObs: any;
+    private detailsForm: any;
+    private categories: any;
+    public test: string[] = ['A', 'B', 'C']
 
     $onInit() {
         this.dishObs = this.dishesService.getDish(this.$state.params.id);
         this.dishObs
             .on('value', (res: any) => {
                 this.dish = res.val();
-                if (this.dish.category) {
-                    this.dishesService.getCategory(this.dish.category)
-                        .once('value')
-                        .then((res: any) => {
-                            this.dish.categoryName = res.val();
-                            this.$scope.$apply();
-                        })
-                } else {
-                    this.$scope.$apply();
-                }
+                this.$scope.$apply();
+            })
+        this.catObs = this.dishesService.getCategories();
+        this.catObs
+            .on('value', (res: any) => {
+                this.categories = res.val();
+                this.dish.categoryName = this.categories[this.dish.category];
+                this.$scope.$apply();
             })
     }
+
     $onDestroy() {
         this.dishObs.off();
+        this.catObs.off();
     }
+
     toggleEdit() {
         this.edit = !this.edit;
     }
+
     submit() {
         this.dishesService
             .updateDish(

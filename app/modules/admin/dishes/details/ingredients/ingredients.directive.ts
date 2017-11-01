@@ -1,4 +1,4 @@
-import { IDirective, IDirectiveLinkFn } from 'angular';
+import { IDirective } from 'angular';
 
 export const IngredientsDirective = function () {
     const ctrl = function (this: any) {
@@ -16,7 +16,7 @@ export const IngredientsDirective = function () {
         require: { ngModelCtrl: 'ngModel' },
         restrict: 'E',
         scope: {
-            ngModel: '<'
+            ngModel: '='
         },
         bindToController: true,
         template: require('./ingredients.directive.html'),

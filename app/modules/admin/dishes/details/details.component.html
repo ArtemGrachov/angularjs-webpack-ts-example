@@ -1,6 +1,6 @@
 <form class="panel panel-default" ng-submit="$ctrl.submit()" name="$ctrl.detailsForm">
     <div class="panel-heading">
-        <button class="btn btn-default" ng-click="$ctrl.toggleEdit()">
+        <button type="button" class="btn btn-default" ng-click="$ctrl.toggleEdit()">
             <span class="glyphicon glyphicon-edit"></span>
             Edit
         </button>
@@ -11,6 +11,10 @@
                 Name:
             </label> {{$ctrl.dish.name}}
             <input type="text" class="form-control" ng-model="$ctrl.dish.name" ng-if="$ctrl.edit" name="name">
+        </div>
+        <div class="form-group">
+            <label>Category:</label> {{$ctrl.dish.categoryName}}
+            <category-select ng-if="$ctrl.edit" ng-model="$ctrl.dish.category" categories="$ctrl.categories" name="category"></category-select>
         </div>
         <div class="form-group">
             <label>
